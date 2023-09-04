@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Cake from "./Cake.js";
+import CakeForm from "./CakeForm.js";
 
 const CakeContainer = () => {
 
@@ -45,7 +46,12 @@ const CakeContainer = () => {
 				   rating: 5
 			} 
 		]		
-	)
+	);
+
+	const addNewCake = (newCake) => {
+		const updatedCakes = [...listOfCakes, newCake]
+		setListOfCakes(updatedCakes)
+	}
 
   return (
     <>
@@ -57,6 +63,8 @@ const CakeContainer = () => {
 				rating = {cake.rating}
 			/>
 		))}
+
+		<CakeForm cake={listOfCakes} addNewCake={addNewCake}/>
         
     </>
   )

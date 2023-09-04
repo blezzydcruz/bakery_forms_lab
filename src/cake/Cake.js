@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Cake = ({ cakeName, ingredients, price, rating }) => {
   return (
     <>
